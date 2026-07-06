@@ -330,6 +330,8 @@ const PROVIDER_ENV_KEYS: Record<string, string> = {
   nous: "NOUS_API_KEY",
   "nous-api": "NOUS_API_KEY",
   xiaomi: "XIAOMI_API_KEY",
+  "opencode-zen": "OPENCODE_ZEN_API_KEY",
+  "opencode-go": "OPENCODE_GO_API_KEY",
 };
 
 // When provider is "custom" or "auto", the desktop's setup flow falls
@@ -351,6 +353,8 @@ const URL_TO_ENV_KEY: Array<[RegExp, string]> = [
   [/api\.mistral\.ai/i, "MISTRAL_API_KEY"],
   [/api\.perplexity\.ai/i, "PERPLEXITY_API_KEY"],
   [/api\.xiaomimimo\.com/i, "XIAOMI_API_KEY"],
+  [/opencode\.ai\/zen/i, "OPENCODE_ZEN_API_KEY"],
+  [/opencode\.ai\/go/i, "OPENCODE_GO_API_KEY"],
 ];
 
 /**

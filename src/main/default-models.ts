@@ -93,6 +93,46 @@ const DEFAULT_MODELS: DefaultModel[] = [
     model: "Qwen/Qwen3-235B-A22B-Instruct-2507",
     baseUrl: "",
   },
+
+  // ── OpenCode (Hermes-native providers) ─────────────────────────
+  // OpenCode Zen — free & paid models via https://opencode.ai/zen/v1
+  {
+    name: "DeepSeek V4 Flash (Free)",
+    provider: "opencode-zen",
+    model: "opencode/deepseek-v4-flash-free",
+    baseUrl: "https://opencode.ai/zen/v1",
+  },
+  {
+    name: "DeepSeek V4 Flash",
+    provider: "opencode-zen",
+    model: "opencode/deepseek-v4-flash",
+    baseUrl: "https://opencode.ai/zen/v1",
+  },
+  {
+    name: "OpenCode Zen 3.5",
+    provider: "opencode-zen",
+    model: "opencode/opencode-zen-3.5",
+    baseUrl: "https://opencode.ai/zen/v1",
+  },
+  // OpenCode Go — high-throughput models via https://opencode.ai/go/v1
+  {
+    name: "DeepSeek V4 Flash (Go)",
+    provider: "opencode-go",
+    model: "opencode-go/deepseek-v4-flash",
+    baseUrl: "https://opencode.ai/go/v1",
+  },
+  {
+    name: "DeepSeek V4 Flash Free (Go)",
+    provider: "opencode-go",
+    model: "opencode-go/deepseek-v4-flash-free",
+    baseUrl: "https://opencode.ai/go/v1",
+  },
+  {
+    name: "GPT-5.4 Nano (Go)",
+    provider: "opencode-go",
+    model: "opencode/gpt-5.4-nano",
+    baseUrl: "https://opencode.ai/go/v1",
+  },
 ];
 
 export default DEFAULT_MODELS;

@@ -46,6 +46,9 @@ export const PROVIDERS = {
     { value: "qwen", label: "Qwen" },
     { value: "minimax", label: "MiniMax" },
     { value: "nous", label: "constants.nousName" },
+    // OpenCode — Hermes-native providers
+    { value: "opencode-zen", label: "OpenCode Zen" },
+    { value: "opencode-go", label: "OpenCode Go" },
     // Local OpenAI-compatible servers. Keep these explicit so users
     // looking for "Ollama" or "LM Studio" do not have to discover the
     // generic custom-provider path first.
@@ -94,6 +97,8 @@ export const PROVIDERS = {
     ollama: "constants.ollama",
     vllm: "constants.vllm",
     llamacpp: "constants.llamacpp",
+    "opencode-zen": "OpenCode Zen",
+    "opencode-go": "OpenCode Go",
     "xai-oauth": "xAI Grok (OAuth)",
     "qwen-oauth": "Qwen (OAuth)",
     "google-gemini-cli": "Gemini (CLI OAuth)",
@@ -217,6 +222,30 @@ export const PROVIDERS = {
       needsKey: false,
     },
     {
+      id: "opencode-zen",
+      name: "OpenCode Zen",
+      desc: "Free & paid models via OpenCode's Zen API",
+      tag: "",
+      envKey: "OPENCODE_ZEN_API_KEY",
+      url: "https://opencode.ai",
+      placeholder: "sk-...",
+      configProvider: "opencode-zen",
+      baseUrl: "https://opencode.ai/zen/v1",
+      needsKey: true,
+    },
+    {
+      id: "opencode-go",
+      name: "OpenCode Go",
+      desc: "High-throughput models via OpenCode's Go API",
+      tag: "",
+      envKey: "OPENCODE_GO_API_KEY",
+      url: "https://opencode.ai",
+      placeholder: "sk-...",
+      configProvider: "opencode-go",
+      baseUrl: "https://opencode.ai/go/v1",
+      needsKey: true,
+    },
+    {
       id: "local",
       name: "constants.localName",
       desc: "constants.localDesc",
@@ -304,6 +333,8 @@ export const PROVIDER_CARDS: { id: string; name: string }[] = [
   { id: "huggingface", name: "Hugging Face" },
   { id: "qwen", name: "Qwen" },
   { id: "nous", name: "constants.nousName" },
+  { id: "opencode-zen", name: "OpenCode Zen" },
+  { id: "opencode-go", name: "OpenCode Go" },
   // "Local / Others" — this chip covers both local servers and any remote
   // OpenAI-compatible endpoint, so it isn't labelled just "Local".
   { id: "local", name: "Local / Others" },
@@ -338,6 +369,8 @@ export const OPENAI_COMPATIBLE_BASE_URLS: Record<string, string> = {
   ollama: "http://localhost:11434/v1",
   vllm: "http://localhost:8000/v1",
   llamacpp: "http://localhost:8080/v1",
+  "opencode-zen": "https://opencode.ai/zen/v1",
+  "opencode-go": "https://opencode.ai/go/v1",
 };
 
 export const LOCAL_PRESETS: LocalPreset[] = [
@@ -427,6 +460,20 @@ export const LOCAL_PRESETS: LocalPreset[] = [
     baseUrl: "https://api.aimlapi.com/v1",
     group: "remote",
     envKey: "AIMLAPI_API_KEY",
+  },
+  {
+    id: "opencode-zen",
+    name: "OpenCode Zen",
+    baseUrl: "https://opencode.ai/zen/v1",
+    group: "remote",
+    envKey: "OPENCODE_ZEN_API_KEY",
+  },
+  {
+    id: "opencode-go",
+    name: "OpenCode Go",
+    baseUrl: "https://opencode.ai/go/v1",
+    group: "remote",
+    envKey: "OPENCODE_GO_API_KEY",
   },
 ];
 

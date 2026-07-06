@@ -34,6 +34,8 @@ export const PROVIDER_BASE_URLS: Record<string, string> = {
   ollama: "http://localhost:11434/v1",
   vllm: "http://localhost:8000/v1",
   llamacpp: "http://localhost:8080/v1",
+  "opencode-zen": "https://opencode.ai/zen/v1",
+  "opencode-go": "https://opencode.ai/go/v1",
 };
 
 /**
